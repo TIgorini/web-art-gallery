@@ -1,0 +1,39 @@
+{
+    "data": [
+        {
+            "src": "img/Starry_Night_over_the_Rhone.jpg",
+            "name": "Starry Night over the Rhone",
+            "id": 1
+        },
+        {
+            "src": "img/Sunflowers.jpg",
+            "name": "Sunflowers",
+            "id": 2
+        },
+        {
+            "src": "img/Self_Portrait.jpg",
+            "name": "Self Portrait",
+            "id": 3
+        },
+        {
+            "src": "img/Wheatfield_with_crows.jpg",
+            "name": "Wheatfield with crows",
+            "id": 4
+        },
+        {
+            "src": "img/The_Church_at_Auvers.jpg",
+            "name": "The Church at Auvers",
+            "id": 5
+        },
+        {
+            "src": "img/Fishing_Boats_on_the_Beach_at_Saintes-Maries.jpg",
+            "name": "Fishing Boats on the Beach at Saintes-Maries",
+            "id": 6
+        },
+        {
+            "src": "img/Starry_Night.jpg",
+            "name": "Starry Night",
+            "id": 7
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+body {
+	background-image: url("chrome://global/skin/media/imagedoc-darknoise.png");
+}
+
+div {display: flex;}
+
+.art {
+	position: absolute;
+	margin-left: 15%;
+	margin-top: 20px; 
+	height: 83%;
+	width: 70%;
+}
+
+.art img {
+	margin: auto;
+	max-height: 100%;
+	max-width: 100%;
+	animation-name: fade;
+  	animation-duration: 2s;
+  	animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+  	from {opacity: 0.4} 
+  	to {opacity: 1}
+}
+
+
+.fixed-panel {
+	position: fixed;
+	bottom: 20px;
+	width: 100%;
+}
+
+.control-panel {
+	align-items: center;  
+	height: 50px;
+	margin-left: auto;
+	margin-right: auto;  
+	padding-left: 10px;
+	padding-right: 10px; 
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+.icons {
+	margin: 5px, 0px, 5px, 0px;
+	font-size: 23px;
+	color: #fff;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.icons:hover {color: #595959;}
+
+.icons:active {
+	animation-name: click;
+	animation-duration: 2s;
+}
+
+#play {display: block;}
+
+#pause {display: none;}
+
+#setting-icon {margin-left: 50px;}
+
+#repeat-icon {
+	margin-right: 50px; 
+	font-size: 23px;
+}
+
+#repeat-icon:hover {color: #595959;}
+
+.no-repeat-icon {color: #333;}
+
+.repeat-icon {color: #fff;}
+
+
+.set-number {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;  
+}

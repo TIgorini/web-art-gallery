@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Vincent van Gogh porfolio</title>
+	<link type="text/css" rel="stylesheet" href="css/main.css"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="header" class="header">
+		<div class="author-name">Vincent van Gogh</div>
+		<div class="header-subj">& his portfolio</div>
+	</div>
+
+	<div id="menu" class="menu">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="gallery.html">Slideshow</a></li>
+		</ul>
+	</div>
+	
+	<script>
+		window.onscroll = function() {
+    		if (document.body.scrollTop > 75 || document.documentElement.scrollTop > 75) {
+        		document.getElementById("menu").className = "menu-fixed";
+    		} else {
+        		document.getElementById("menu").className = "menu";
+    		}
+		}
+	</script>
+
+	<div id="primary" class="primary">
+		<a class="up-roll" href="#header"></a>
+
+		<div class="content">
+			<div class="content-body">
+				<div class="gallery">
+					<div class="picture-block" v-for="img in images">
+						<div class="image">			
+							<img v-bind:src="img.src"></img>
+							<div class="black-back"></div>
+							<a v-bind:href="img.src"></a>			
+						</div>
+						<h4>{{img.name}}</h4>
+						<div class="remove" v-bind:id="'rm' + img.id" v-if="edit" @click="remove">
+							<span class="material-icons">delete</span>
+						</div>
+					</div>
+					<div class="add" v-if="edit" @click="upload_form = true">
+						<span class="material-icons">add_circle</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="right-panel">
+				<div class="links">
+					<h3>Useful links:</h3>
+					<a href="https://www.vangoghgallery.com/">Van Gogh Gallery</a>
+					<a href="https://www.biography.com/people/vincent-van-gogh-9515695">Biography</a>
+					<a href="http://www.imdb.com/title/tt3262342/">Film</a>
+					<a href="https://www.facebook.com/vincentwillemvangogh/">Facebook</a>
+					<a href="http://kpi.ua/en">KPI</a>
+				</div>
+				<div class="links"> 
+					<label class="switch" >
+  						<input type="checkbox" v-model="edit">
+  						<span class="slider round"></span>
+					</label>
+					<span>Edit mode</span>  
+				</div>
+			</div>
+		</div>
+
+		<div class="upload-form" v-if="upload_form">
+			<h3>Image uploading</h3>
+	      	<form id="upload_form" action="upload" @submit="add" method="POST" enctype = "multipart/form-data">
+	      		<div class="form-group">
+	      			<label>Select image:</label>
+	         		<input type="file" name="image" size="50" required>
+	         	</div>
+	         	<div class="form-group">
+	         		<label>Image name:</label>
+	         		<textarea name="image_name" required style="width: 350px; height: 50px;"></textarea>
+	         	</div>
+	         	<div class="submit">
+	         		<input type ="submit" value ="Upload Image">
+	         		<input type= "button" value="Cancel" @click="upload_form = false">
+	      		</div>
+	      	</form>
+		</div>
+	</div>
+
+	<footer class="site-footer">
+		<div class="footer-text">Made by: Tymoshenko Igor, KV-51</div>
+		<div class="contacts">Contacts: mr7igrik@gmail.com</div>
+	</footer>	
+
+	<script src="js/main.js"></script>
+</body>
+</html>

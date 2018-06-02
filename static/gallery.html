@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Art Gallery</title>
+    <link rel="stylesheet" href="css/gallery.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="show">
+        <div class="art" v-for="img in images">
+            <img class="fade" v-bind:id="'img' + img.id" v-bind:src="img.src">
+        </div> 
+        <div class="fixed-panel">   
+            <div class="control-panel">
+                <span class="glyphicon glyphicon-retweet no-repeat-icon" id="repeat-icon" v-on:click="setRepeat"></span>
+                <span class="glyphicon icons glyphicon-step-backward" id="prev-icon" v-on:click="nextPicture(-1)"></span>
+                <span class="glyphicon icons glyphicon-play" id="play" v-on:click="slideshow(true)"></span>
+                <span class="glyphicon icons glyphicon-pause" id="pause" v-on:click="slideshow(false)"></span>
+                <span class="glyphicon icons glyphicon-step-forward" id="next-icon" v-on:click="nextPicture(1)"></span>
+                <div class="dropup">
+                    <span data-toggle="dropdown" class="glyphicon icons glyphicon-option-horizontal" id="setting-icon"></span>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">Set delay  (ms)</li>
+                        <li>
+                            <div class="set-number">
+                                <input type="number" v-model.number="delay" step="100" min="1000">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/gallery.js"></script>
+</body>
+</html>
